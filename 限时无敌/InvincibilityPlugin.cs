@@ -93,6 +93,8 @@ namespace InvincibilityPlugin
             invincibleTimer = new Timer(RemoveInvincibility, player, (int)(duration * 1000), Timeout.Infinite);
         }
 
+
+
         private void RemoveInvincibility(object state)
         {
             TSPlayer player = (TSPlayer)state;
