@@ -93,6 +93,8 @@ namespace InvincibilityPlugin
             invincibleTimer = new Timer(RemoveInvincibility, player, (int)(duration * 1000), Timeout.Infinite);
         }
 
+
+
         private void RemoveInvincibility(object state)
         {
             TSPlayer player = (TSPlayer)state;
@@ -143,7 +145,7 @@ namespace InvincibilityPlugin
 
             if (Config.EnableFrameReminder)
             {
-                args.Player.SendErrorMessage($"你将在 {args.Parameters[0]} 秒内无敌.");
+                args.Player.SendSuccessMessage($"你将在 {args.Parameters[0]} 秒内无敌.");
             }
             // 发送无敌帧开始提示文本
             if (!string.IsNullOrEmpty(Config.CustomStartFrameText))
