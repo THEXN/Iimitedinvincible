@@ -156,7 +156,7 @@ namespace InvincibilityPlugin
             // 发送数据包和延迟操作
             while (duration >= 1.33)
             {
-                player.SendData((PacketTypes)62, "", player.Index, 2f, 0f, 0f, 0);
+                player.SendData(PacketTypes.PlayerDodge, "", player.Index, 2f, 0f, 0f, 0);
                 duration -= 0.1;
                 await Task.Delay(100);
             }
