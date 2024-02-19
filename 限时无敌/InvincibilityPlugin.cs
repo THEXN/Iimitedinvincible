@@ -52,7 +52,7 @@ namespace InvincibilityPlugin
         private void OnInitialize(EventArgs args)
         {
             Commands.ChatCommands.Add(new Command("限时godmode无敌", InvincibleCommand, "tempinv", "限时无敌"));
-            Commands.ChatCommands.Add(new Command("限时无敌帧无敌", ToggleMapTeleport, "tempinv2", "限时无敌帧无敌"));
+            Commands.ChatCommands.Add(new Command("限时无敌帧无敌", ActivateFrameInvincibility, "tempinv2", "限时无敌帧无敌"));
         }
 
         private void InvincibleCommand(CommandArgs args)
@@ -131,7 +131,7 @@ namespace InvincibilityPlugin
             NetMessage.SendData((int)PacketTypes.PlayerInfo, -1, -1, null, player.Index, 1f);
         }
 
-        private async void ToggleMapTeleport(CommandArgs args)
+        private async void ActivateFrameInvincibility(CommandArgs args)
         {
             // 参数验证
             if (args.Parameters.Count < 1 || !double.TryParse(args.Parameters[0], out double duration) || duration <= 0)
