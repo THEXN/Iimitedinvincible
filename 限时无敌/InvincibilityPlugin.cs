@@ -16,7 +16,7 @@ namespace InvincibilityPlugin
         public override string Author => "肝帝熙恩";
         public override string Description => "在命令中给予玩家一段时间的无敌状态。";
         public override string Name => "InvincibilityPlugin";
-        public override Version Version => new Version(1, 0, 0, 1);
+        public override Version Version => new Version(1, 0, 0, 4);
         public static Configuration Config;
         public InvincibilityPlugin(Main game) : base(game) 
         {
@@ -51,14 +51,14 @@ namespace InvincibilityPlugin
 
         private void OnInitialize(EventArgs args)
         {
-            Commands.ChatCommands.Add(new Command("限时godmode无敌", InvincibleCommand, "tempinv", "限时无敌"));
-            Commands.ChatCommands.Add(new Command("限时无敌帧无敌", ActivateFrameInvincibility, "tempinv2", "限时无敌帧无敌"));
+            Commands.ChatCommands.Add(new Command("限时god无敌", InvincibleCommand, "tgod", "限时god无敌"));
+            Commands.ChatCommands.Add(new Command("限时无敌帧无敌", ActivateFrameInvincibility, "tframe", "限时无敌帧无敌"));
         }
 
         private void InvincibleCommand(CommandArgs args)
         {
             // 检查权限
-            if (!args.Player.HasPermission("限时godmode无敌"))
+            if (!args.Player.HasPermission("限时god无敌"))
             {
                 args.Player.SendErrorMessage("你没有执行此命令的权限。");
                 return;
@@ -66,7 +66,7 @@ namespace InvincibilityPlugin
 
             if (args.Parameters.Count < 1)
             {
-                args.Player.SendErrorMessage("用法: /限时godmode无敌或tempinv <持续时间秒数>");
+                args.Player.SendErrorMessage("用法: /限时god无敌或tgod <持续时间秒数>");
                 return;
             }
 
@@ -136,7 +136,7 @@ namespace InvincibilityPlugin
             // 参数验证
             if (args.Parameters.Count < 1 || !double.TryParse(args.Parameters[0], out double duration) || duration <= 0)
             {
-                args.Player.SendSuccessMessage("用法: /限时无敌帧无敌 <持续时间秒数>");
+                args.Player.SendSuccessMessage("用法: /限时无敌帧无敌或tframe <持续时间秒数>");
                 return;
             }
 
