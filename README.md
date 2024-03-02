@@ -36,4 +36,5 @@
 确保你的玩家拥有`限时无敌帧无敌`权限才能使用无敌命令。
 
 ## 支持与反馈
-如果你在使用过程中遇到任何问题，或者有任何建议，欢迎在[GitHub](https://github.com/THEXN/Iimitedinvincible)上提出issue或提交pull request。
+- 如果您在使用过程中遇到问题或有任何建议，欢迎在官方论坛或社区中提出issues或pr。
+- github仓库：https://github.com/THEXN/Iimitedinvincible
